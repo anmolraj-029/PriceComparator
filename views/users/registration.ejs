@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration Form</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 20px;
+    }
+
+    header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin: 0;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    p {
+      color: green;
+    }
+    
+    footer {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+      position: fixed;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>QuickShop</h1>
+  </header>
+
+  <form action="/quickshop" method="post" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Enter Name">
+    <br><br>
+    <input type="text" name="email" placeholder="Enter Email">
+    <br><br>
+    <input type="text" name="mobile" placeholder="Enter Mobile">
+    <br><br>
+    <input type="file" name="image">
+    <br><br>
+    <input type="password" name="password" placeholder="Enter Password">
+    <br><br>
+    <input type="submit" value="Register">
+  </form>
+
+  <% if (typeof message !== 'undefined') { %>
+    <p><%= message %></p>
+  <% } %>
+
+  <footer>
+    &copy; 2023 Your QuickShop. All rights reserved.
+  </footer>
+</body>
+</html>

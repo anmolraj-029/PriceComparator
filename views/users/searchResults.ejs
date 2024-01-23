@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .results-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .result-item {
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 15px;
+        }
+
+        .name {
+            font-weight: bold;
+        }
+
+        .image img {
+            max-width: 120px;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        .offer-item {
+            border-top: 1px solid #ddd;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+
+        .shop-name a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .url a {
+            text-decoration: none;
+            color: #28A745;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <% results.forEach(result => { %>
+            <div class="result-item">
+                <% if (result.content && result.content.name) { %>
+                    <p class="name">Name: <%= result.content.name %></p>
+                    <p class="image"> <img src="<%= result.content.image_url %>" alt="<%= result.content.name %>"></p>
+    
+                    <% result.content.offers.forEach(offer => { %>
+                        <div class="offer-item">
+                            <p class="shop-name">Shop Name: <a href="<%= offer.url %>" target="_blank"><%= offer.shop_name %></a></p>
+                            <p class="price">Price: <%= offer.price %></p>
+                            <p class="url">URL: <a href="<%= offer.url %>" target="_blank"><%= offer.url %></a></p>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p class="name">Name: N/A</p>
+                    <!-- Add fallback content or message for when name is not available -->
+                <% } %>
+            </div>
+        <% }); %>
+    </div>
+    
+</body>
+</html>

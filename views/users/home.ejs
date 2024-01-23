@@ -1,0 +1,407 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Home Page</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: #007bff;
+      margin: 0;
+      font-size: 2em;
+    }
+
+    a {
+      text-decoration: none;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      margin-top: 20px;
+    }
+
+    a:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+      position: fixed;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome To Home Page</h1>
+  </header>
+
+  <a href="/logout">Logout</a>
+
+  <footer>
+    &copy; 2023 Your Awesome Website. All rights reserved.
+  </footer>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QuickShop</title>
+    <style>
+      /* Basic styling for the price comparator */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .product {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      .product img {
+        max-width: 100px;
+        max-height: 100px;
+        margin-right: 10px;
+      }
+
+      .product-details {
+        flex: 1;
+      }
+
+      .product-title {
+        font-weight: bold;
+      }
+
+      .product-price {
+        color: #007bff;
+      }
+      ul.navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+        overflow: hidden;
+      }
+
+      li.nav-item {
+        float: left;
+      }
+
+      li.nav-item a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li.nav-item a:hover {
+        background-color: #444;
+      }
+
+      /* .login {
+        float: right;
+      } */
+
+      /* Style for the login button */
+      /* .login a {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 14px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      } */
+
+      /* .login a:hover {
+        background-color: #0056b3;
+      } */
+      .logout {
+        float: right;
+        margin: 0px 0px 0px 5px;
+      }
+
+      /* Style for the login button */
+      .logout a {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 14px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+
+      .logout a:hover {
+        background-color: #0056b3;
+      }
+      .filter-select {
+        margin-top: 20px;
+      }
+
+      .search-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .search-box {
+        padding: 10px;
+        width: 80%;
+        max-width: 400px;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      .search-box:focus {
+        border-color: #007bff;
+      }
+
+      .search-button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .search-button:hover {
+        background-color: #0056b3;
+      }
+
+      .search-button:active {
+        transform: scale(0.95);
+      }
+
+      .sort-button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .sort-button:hover {
+        background-color: #0056b3;
+      }
+
+      .sort-button:active {
+        transform: scale(0.95);
+      }
+      .btnRegister{
+        cursor:pointer;
+      }
+      footer {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+      position: fixed;
+      bottom: 0;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="navbar">
+        <!-- <li class="nav-item"><a href="/home">Home</a></li> -->
+        <li class="nav-item"><a href="/about">About</a></li>
+        <li class="logout"><a href="/logout">Logout</a></li>
+        <!-- <li class="login"><a href="/">Login</a></li> -->
+      </ul>
+
+      <h1>QuickShop</h1>
+
+       <div class="search-container">
+        <form action="/home" method="POST" >
+        <input
+          type="text"
+          class="search-box"
+          id="searchInput"
+          placeholder="Search for a product..."
+          name="productName"
+        />
+         <input type="submit" class="btnRegister" value="Search">
+        </form>
+      </div>
+       
+      <!-- Electronic Item 1 -->
+      <div class="product">
+        <img
+          src="https://media.istockphoto.com/id/185277608/photo/hand-with-computer-mouse.webp?b=1&s=170667a&w=0&k=20&c=oKYgHyVHoI3xjSRQdO2bllSqo2opZ4eubLqtzYGHCv0="
+          alt="Mouse"
+        />
+        <div class="product-details">
+          <div class="product-title">Wireless Mouse</div>
+          <div class="product-price">$19.99</div>
+        </div>
+      </div>
+
+      <!-- Electronic Item 2 -->
+      <div class="product">
+        <img
+          src="https://media.istockphoto.com/id/1389603578/photo/laptop-blank-screen-on-wood-table-with-blurred-coffee-shop-cafe-interior-background-and.webp?b=1&s=170667a&w=0&k=20&c=fPqy8pPGL4IQa2LvQQ2tX9qUPmIhPfmqu-xEVMEC1vY="
+          alt="Laptop"
+        />
+        <div class="product-details">
+          <div class="product-title">Laptop</div>
+          <div class="product-price">$999.99</div>
+        </div>
+      </div>
+
+      <!-- Electronic Item 3 -->
+      <div class="product">
+        <img
+          src="https://media.istockphoto.com/id/160948560/photo/computer-keyboard-message-euro-sign.webp?b=1&s=170667a&w=0&k=20&c=ijGHT1UaRGT11sCVnvSrl95Mzteebt_kNVqjYtC4F9I="
+          alt="Keyboard"
+        />
+        <div class="product-details">
+          <div class="product-title">Mechanical Keyboard</div>
+          <div class="product-price">$79.99</div>
+        </div>
+      </div>
+
+      <!-- Electronic Item 4 -->
+      <div class="product">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1687892170417-f9a11a402ef7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNvbXB1dGVyfGVufDB8fDB8fHww"
+          alt="Computer"
+        />
+        <div class="product-details">
+          <div class="product-title">Desktop Computer</div>
+          <div class="product-price">$1299.99</div>
+        </div>
+      </div>
+
+      <!-- Electronic Item 5 -->
+      <div class="product">
+        <img
+          src="https://media.istockphoto.com/id/1403825072/photo/music-streaming-on-smartphone-application-3d-illustration.webp?b=1&s=170667a&w=0&k=20&c=uCgn_aVBj55A7zneBtLU9v2_kCL4EPpjHOfXdKu906s="
+          alt="Headphones"
+        />
+        <div class="product-details">
+          <div class="product-title">Wireless Headphones</div>
+          <div class="product-price">$69.99</div>
+        </div>
+      </div>
+
+      <!-- Electronic Item 6 -->
+      <div class="product">
+        <img
+          src="https://media.istockphoto.com/id/1363622538/photo/set-of-contemporary-smartphones-black-and-white-mobile-smartphones-on-dark-background-mobile.webp?b=1&s=170667a&w=0&k=20&c=JgvmESuUonOiXFx0Q75HlT5mNcg6T3LTCu1_YQl7BNM="
+          alt="Smartphone"
+        />
+        <div class="product-details">
+          <div class="product-title">Smartphone</div>
+          <div class="product-price">$499.99</div>
+        </div>
+      </div>
+
+      <!-- Electronic Item 7 -->
+      <div class="product">
+        <img
+          src="https://media.istockphoto.com/id/1162132907/photo/closeup-of-a-tablet-with-a-picture-of-a-fern-workplace-in-the-office-female-hands-are-holding.webp?b=1&s=170667a&w=0&k=20&c=tgl6oasPOIGW6vMdQ13wuEtWgl24M8RQ4dTtSgEdRzU="
+          alt="Tablet"
+        />
+        <div class="product-details">
+          <div class="product-title">Tablet</div>
+          <div class="product-price">$299.99</div>
+        </div>
+      </div>
+
+      <!-- Electronic Item 8 -->
+      <div class="product">
+        <img
+          src="https://media.istockphoto.com/id/1065383810/photo/computer-display-for-mockup-on-table-3d-rendering.jpg?s=612x612&w=0&k=20&c=WOiqgM0OzaEZML0NS7QsAqB6RUG3Hmu5ka-Qmrz64Lo="
+          alt="Monitor"
+        />
+        <div class="product-details">
+          <div class="product-title">Computer Monitor</div>
+          <div class="product-price">$199.99</div>
+        </div>
+      </div>
+
+      <!-- Electronic Item 9 -->
+      <div class="product">
+        <img
+          src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJpbnRlcnxlbnwwfHwwfHx8MA%3D%3D"
+          alt="Printer"
+        />
+        <div class="product-details">
+          <div class="product-title">Wireless Printer</div>
+          <div class="product-price">$129.99</div>
+        </div>
+      </div>
+
+      <!-- Electronic Item 10 -->
+      <div class="product">
+        <img
+          src="https://media.istockphoto.com/id/1163005808/photo/elementary-age-girl-walking-in-the-park-during-winter-season.webp?b=1&s=170667a&w=0&k=20&c=-kFNPmIm5PFujkwpnHzf0md_Y94qaYAGYuLQ6NnxWkY="
+          alt="Camera"
+        />
+        <div class="product-details">
+          <div class="product-title">Digital Camera</div>
+          <div class="product-price">$249.99</div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      &copy; 2023 Your Quickshop. All rights reserved.
+    </footer>
+  </body>
+  </html>
