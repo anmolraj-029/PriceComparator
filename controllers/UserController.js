@@ -27,8 +27,8 @@ const sendVerifymail=async(name,email,user_id)=>{
             //     password:'rohitsharma029'
             // }
             auth: {
-                user: 'lucas33@ethereal.email',
-                pass: 'TQFedtEZ8dkDMWXfKt'
+                user: 'scottie84@ethereal.email',
+                pass: 'vXakyV7MCSJpNgCDYF'
             }
         });
         const mailoptions={
@@ -264,8 +264,8 @@ const sendResetPasswordMail=async(name,email,token)=>{
             //     password:'rohitsharma029'
             // }
             auth: {
-                user: 'lucas33@ethereal.email',
-                pass: 'TQFedtEZ8dkDMWXfKt'
+                user: 'scottie84@ethereal.email',
+                pass: 'vXakyV7MCSJpNgCDYF'
             }
         });
         const mailoptions={
