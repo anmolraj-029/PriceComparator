@@ -14,30 +14,30 @@ const securepassword=async(password)=>{
 }
 //for verify email
 const sendVerifymail=async(name,email,user_id)=>{
-    let testaccount=await nodemailer.createTestAccount()
+    //let testaccount=await nodemailer.createTestAccount()
      try{
-        const transpoter=nodemailer.createTransport({
-            //host:'smtp.gmail.com',
-            host:'smtp.ethereal.email',
+        const transporter=nodemailer.createTransport({
+            host:'smtp.gmail.com',
+            //host:'smtp.ethereal.email',
             port:587,
             secure:false,
             requireTLS:true,
-            // auth:{
-            //     user:'anmolraj029@gmail.com',
-            //     password:'rohitsharma029'
-            // }
-            auth: {
-                user: 'scottie84@ethereal.email',
-                pass: 'vXakyV7MCSJpNgCDYF'
+            auth:{
+                user:'anmolraj029@gmail.com',
+                pass:'vohv uzez tcqw zkci'
             }
+            // auth: {
+            //     user: 'scottie84@ethereal.email',
+            //     pass: 'vXakyV7MCSJpNgCDYF'
+            // }
         });
         const mailoptions={
             from:'anmolraj029@gmail.com',
             to:email,
             subject:'For verification mail',
-            html:'<p>Hello '+name+',Please click here to <a href=" http://localhost:3000/verify?id='+user_id+' "> verify </a> your mail.</p>'
+            html:'<p>Hello '+name+',Please click here to <a href=" https://pricecomparator-2.onrender.com/verify?id='+user_id+' "> verify </a> your mail.</p>'
         }
-        transpoter.sendMail(mailoptions,function(error,info){
+        transporter.sendMail(mailoptions,function(error,info){
             if(error){
                 console.log(error)
             }
@@ -251,30 +251,30 @@ const loadabout=async(req,res)=>{
 //forget password code start
 //for reset password send mail
 const sendResetPasswordMail=async(name,email,token)=>{
-    let testaccount=await nodemailer.createTestAccount()
+    //let testaccount=await nodemailer.createTestAccount()
      try{
-        const transpoter=nodemailer.createTransport({
-            //host:'smtp.gmail.com',
-            host:'smtp.ethereal.email',
+        const transporter=nodemailer.createTransport({
+            host:'smtp.gmail.com',
+            //host:'smtp.ethereal.email',
             port:587,
             secure:false,
             requireTLS:true,
-            // auth:{
-            //     user:'anmolraj029@gmail.com',
-            //     password:'rohitsharma029'
-            // }
-            auth: {
-                user: 'scottie84@ethereal.email',
-                pass: 'vXakyV7MCSJpNgCDYF'
+            auth:{
+                user:'anmolraj029@gmail.com',
+                pass:'vohv uzez tcqw zkci'
             }
+            // auth: {
+            //     user: 'scottie84@ethereal.email',
+            //     pass: 'vXakyV7MCSJpNgCDYF'
+            // }
         });
         const mailoptions={
             from:'anmolraj029@gmail.com',
             to:email,
             subject:'For Reset Pssword',
-            html:'<p>Hello '+name+',Please click here to <a href=" http://localhost:3000/forget-password?token='+token+' ">Reset</a> your password.</p>'
+            html:'<p>Hello '+name+',Please click here to <a href=" https://pricecomparator-2.onrender.com/forget-password?token='+token+' ">Reset</a> your password.</p>'
         }
-        transpoter.sendMail(mailoptions,function(error,info){
+        transporter.sendMail(mailoptions,function(error,info){
             if(error){
                 console.log(error)
             }

@@ -9,15 +9,22 @@
 const mongoose=require('mongoose');
 mongoose.set('strictQuery',false);
 const port=5000 || process.env.PORT;
-const connectDB=async()=>{
-    try{
-      const conn=await mongoose.connect(process.env.MONGODB_URI);
-      console.log(`Database connected: ${conn.connection.host}`);
-    }
-    catch(err){
-        console.log(err);
-    }
-}
+// const connectDB=async()=>{
+//     try{
+//       const conn=await mongoose.connect(process.env.MONGODB_URI);
+//       console.log(`Database connected: ${conn.connection.host}`);
+//     }
+//     catch(err){
+//         console.log(err);
+//     }
+// }
+mongoose.connect("mongodb+srv://anmolraj029:2XleTOcbmUPqSyY3@cluster0.ynlugpz.mongodb.net/PriceComparator")
+.then(()=>{
+    console.log("mongo connected")
+})
+.catch((err)=>{
+    console.log(err)
+})
 const express=require("express")
 const app=express()
 
