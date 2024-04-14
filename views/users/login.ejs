@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -124,12 +124,126 @@
   <p><a href="/quickshop">Not Registered?Continue to Register</a></p>
   <a href="/forget">Forget Password</a>
 
-  <% if (typeof message !== 'undefined') { %>
-    <h4><%= message %></h4>
-  <% } %>
 
   <footer>
     &copy; 2023 Quickshop. All rights reserved.
   </footer>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickShop</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* Custom Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://source.unsplash.com/1600x900/?shopping,electronics');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+    }
+    header {
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: #d32f2f; /* Deep red for a striking appearance */
+    }
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      margin: auto;
+    }
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      padding: 12px;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      padding: 10px;
+      color: #fff;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 20px;
+    }
+    .link-block {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .link-block a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>QuickShop</h2>
+  </header>
+
+  <div class="container">
+    <div class="form-container">
+      <form action="/login" method="post">
+        <div class="form-group">
+          <input type="text" class="form-control" name="email" placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" name="password" placeholder="Enter Password">
+        </div>
+        <input type="submit" class="btn btn-primary" value="Login">
+      </form>
+      <div class="link-block">
+        <a href="/quickshop">Not Registered? Continue to Register</a>
+      </div>
+      <div class="link-block">
+        <a href="/forget">Forget Password</a>
+      </div>
+      <% if (typeof message !== 'undefined') { %>
+        <h4><%= message %></h4>
+      <% } %>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2023 Quickshop. All rights reserved.
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
