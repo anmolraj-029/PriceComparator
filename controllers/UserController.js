@@ -112,7 +112,7 @@ const verifyLogin=async(req,res)=>{
                 res.render('login',{message:"Email not verified"});
             }
             else{
-              req.session.user_id=userdata._id;
+              req.session.user_id=userdata._id;//custom fiels user_id
               res.redirect('/home');
             }
           }
@@ -131,6 +131,15 @@ const verifyLogin=async(req,res)=>{
 const loadHome=async(req,res)=>{
     try{
        res.render('home');
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+const loadprofile=async(req,res)=>{
+    try{
+       const userdata=await User.findById({_id:req.session.user_id})
+       res.render('Myprofile',{user:userdata});
     }
     catch(err){
         console.log(err);
@@ -323,7 +332,7 @@ const forgetVerify=async(req,res)=>{
 
 const forgetPasswordLoad=async(req,res)=>{
     try{
-       const token=req.query.token;
+       const token=req.query.token;//in url
        const tokenData=await User.findOne({token:token});
        if(tokenData){
           res.render('forget-password',{user_id:tokenData._id});
@@ -340,9 +349,8 @@ const forgetPasswordLoad=async(req,res)=>{
 const resetPassword=async(req,res)=>{
     try{
        const password=req.body.password;
-       const user_id=req.body.user_id;
+       const user_id=req.body._id;
        const secure_password=await securepassword(password);
-
        const updateData=await User.findByIdAndUpdate({_id:user_id},{$set:{password:secure_password,token:''}});
        res.redirect('/');
     }
@@ -359,6 +367,7 @@ module.exports={
     loginload,
     verifyLogin,
     loadHome,
+    loadprofile,
     homesearch,
     loadabout,
     userLogout,

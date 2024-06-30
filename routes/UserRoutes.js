@@ -4,6 +4,7 @@ const user_route=express.Router();
 const session=require("express-session");
 const config=require('../config/config');
 
+user_route.use(express.static('public'));
 user_route.use(session({secret:config.sessionSecret}));
 
 // user_route.use(session({
@@ -52,6 +53,8 @@ user_route.post('/login',UserController.verifyLogin);
 
 user_route.get('/home',auth.isLogin,UserController.loadHome);
 user_route.post('/home',auth.isLogin,UserController.homesearch);
+
+user_route.get('/profile',auth.isLogin,UserController.loadprofile);
 
 user_route.get('/about',auth.isLogin,UserController.loadabout);
 

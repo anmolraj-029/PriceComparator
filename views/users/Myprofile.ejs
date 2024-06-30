@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            padding-top: 40px; /* Add some padding to the top */
+        }
+        .profile-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px; /* Increased max-width for better readability */
+            margin: auto; /* Center align */
+        }
+        .profile-container img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow to the image */
+        }
+        .profile-container h2 {
+            margin-bottom: 10px;
+            font-size: 28px;
+            color: #333;
+        }
+        .profile-container p {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <div class="profile-container text-center">
+                    <img src="UserImages/<%= user.image %>" alt="Profile Photo" class="img-fluid">
+                    <h2><%= user.name %></h2>
+                    <p>Email: <%= user.email %></p>
+                    <p>Contact Number: <%= user.mobile %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p style="text-align: center;"><a href='/home' style="color: blue; text-decoration: none; font-weight: bold;">Go to Home page</a></p>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+</body>
+</html>
